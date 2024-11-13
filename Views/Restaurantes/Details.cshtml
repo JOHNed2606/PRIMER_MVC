@@ -1,0 +1,61 @@
+﻿@model PRIMER_MVC.Models.Restaurante
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center my-4">Detalles del Restaurante</h1>
+
+<div class="card shadow p-4 mb-4">
+  
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3 fw-bold text-primary">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt class="col-sm-3 fw-bold text-primary">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt class="col-sm-3 fw-bold text-primary">
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+
+        <dt class="col-sm-3 fw-bold text-primary">
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt class="col-sm-3 fw-bold text-primary">
+            @Html.DisplayNameFor(model => model.Capacidad)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Capacidad)
+        </dd>
+
+        <dt class="col-sm-3 fw-bold text-primary">
+            @Html.DisplayNameFor(model => model.TipoCocina)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TipoCocina)
+        </dd>
+    </dl>
+</div>
+
+<div class="d-flex justify-content-between mt-4">
+    <a asp-action="Edit" asp-route-id="@Model?.IdRestaurante" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+</div>
+

@@ -1,0 +1,67 @@
+﻿@model PRIMER_MVC.Models.Restaurante
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center my-4">Editar Restaurante</h1>
+
+
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Edit" class="p-4 shadow rounded bg-light">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <input type="hidden" asp-for="IdRestaurante" />
+
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label fw-bold"></label>
+                <input asp-for="Nombre" class="form-control" placeholder="Nombre del Restaurante" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Direccion" class="form-label fw-bold"></label>
+                <input asp-for="Direccion" class="form-control" placeholder="Dirección" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Ciudad" class="form-label fw-bold"></label>
+                <input asp-for="Ciudad" class="form-control" placeholder="Ciudad" />
+                <span asp-validation-for="Ciudad" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Telefono" class="form-label fw-bold"></label>
+                <input asp-for="Telefono" class="form-control" placeholder="Teléfono" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Capacidad" class="form-label fw-bold"></label>
+                <input asp-for="Capacidad" class="form-control" placeholder="Capacidad (Número de personas)" />
+                <span asp-validation-for="Capacidad" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="TipoCocina" class="form-label fw-bold"></label>
+                <input asp-for="TipoCocina" class="form-control" placeholder="Tipo de Cocina" />
+                <span asp-validation-for="TipoCocina" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-outline-secondary">Volver a la lista</a>
+                <input type="submit" value="Actualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

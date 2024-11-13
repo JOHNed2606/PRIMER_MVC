@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PRIMER_MVC.Models.Restaurante>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center my-4">Restaurantes</h1>
+
+<p class="text-center">
+    <a asp-action="Create" class="btn btn-primary my-3">NUEVO REGISTRO</a>
+</p>
+
+<table class="table table-hover table-bordered shadow-lg">
+    <thead class="table-dark text-center">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Direccion)</th>
+            <th>@Html.DisplayNameFor(model => model.Ciudad)</th>
+            <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+            <th>@Html.DisplayNameFor(model => model.Capacidad)</th>
+            <th>@Html.DisplayNameFor(model => model.TipoCocina)</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="align-middle text-center">
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
+                <td>@Html.DisplayFor(modelItem => item.Ciudad)</td>
+                <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                <td>@Html.DisplayFor(modelItem => item.Capacidad)</td>
+                <td>@Html.DisplayFor(modelItem => item.TipoCocina)</td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        <a asp-action="Edit" asp-route-id="@item.IdRestaurante" class="btn btn-sm btn-warning mx-1">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.IdRestaurante" class="btn btn-sm btn-info mx-1 text-white">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdRestaurante" class="btn btn-sm btn-danger mx-1">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
